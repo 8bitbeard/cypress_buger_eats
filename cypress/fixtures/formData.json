@@ -1,0 +1,93 @@
+{
+  "valid_with_motocycle": {
+    "name": "Emilly Fabiana Aline Galvão",
+    "cpf": "68469859307",
+    "email": "emillyfabianaalinegalvao_@progetamos.com.br",
+    "whatsapp": "65985103721",
+    "address": {
+      "postalcode": "49060260",
+      "street": "Rua Garcia Moreno",
+      "number": "139",
+      "details": "Ap 02",
+      "district": "Palestina",
+      "city_state": "Aracaju/SE"
+    },
+    "delivery_method": [
+      "Moto"
+    ],
+    "cnh": "cnh-digital.jpg"
+  },
+  "valid_with_bike": {
+    "name": "Anthony Roberto Brito",
+    "cpf": "71581853971",
+    "email": "anthonyrobertobrito_@michaelpage.com.br",
+    "whatsapp": "95996795182",
+    "address": {
+      "postalcode": "65604599",
+      "street": "Rua da Harmonia",
+      "number": "5092",
+      "details": "Torre C, Apt 89",
+      "district": "Teso Duro",
+      "city_state": "Caxias/MA"
+    },
+    "delivery_method": [
+      "Bicicleta"
+    ]
+  },
+  "valid_with_car": {
+    "name": "Renato Ricardo Augusto Mendes",
+    "cpf": "08726165503",
+    "email": "renatoricardoaugustomendes_@agenciaph.com",
+    "whatsapp": "9525800202",
+    "address": {
+      "postalcode": "69317374",
+      "street": "Rua Latitudinal",
+      "number": "928",
+      "details": "Apt 43",
+      "district": "Equatorial",
+      "city_state": "Boa Vista/RR"
+    },
+    "delivery_method": [
+      "Van/Carro"
+    ],
+    "cnh": "cnh-digital.jpg"
+  },
+  "valid_multiple_delivery_methods": {
+    "name": "Vitor Nelson Moura",
+    "cpf": "71959932640",
+    "email": "vvitornelsonmoura@puenteimoveis.com.br",
+    "whatsapp": "8527699880",
+    "address": {
+      "postalcode": "60334210",
+      "street": "Rua Valter Alexandre Martins Gonçalves",
+      "number": "309",
+      "details": "Apt 43",
+      "district": "Barra do Ceará",
+      "city_state": "Fortaleza/CE"
+    },
+    "delivery_method": [
+      "Moto",
+      "Bicicleta",
+      "Van/Carro"
+    ],
+    "cnh": "cnh-digital.jpg"
+  },
+  "cpf_inv": {
+    "name": "Louise Vera Cavalcanti",
+    "cpf": "71581853971AA",
+    "email": "louiseveracavalcanti_@grupoaguaviva.com.br",
+    "whatsapp": "62984250573",
+    "address": {
+      "postalcode": "76913171",
+      "street": "Rua Tarauacá",
+      "number": "1000",
+      "details": "Ap 142",
+      "district": "Cafezinho",
+      "city_state": "Ji-Paraná/RO"
+    },
+    "delivery_method": [
+      "Moto"
+    ],
+    "cnh": "cnh-digital.jpg"
+  }
+}

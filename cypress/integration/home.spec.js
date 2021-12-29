@@ -1,7 +1,14 @@
+import homePage from "../support/pages/home"
+
 describe('Home Page', () => {
-  it('app deve estar online', () => {
-    cy.viewport(1440, 900)
-    cy.visit('https://buger-eats.vercel.app')
-    cy.get('#page-home main h1').should('have.text', 'Seja um parceiro entregador pela Buger Eats')
+  it('Deve ser possível acessar a home page', () => {
+    homePage.go();
+    homePage.validateMessages();
+    homePage.validateLogo();
+  })
+
+  it('Deve ser possível acessar o formulário de cadastro de entregadores', () => {
+    homePage.go();
+    homePage.accessForm();
   })
 })
