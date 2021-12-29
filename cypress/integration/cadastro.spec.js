@@ -6,7 +6,7 @@ describe('Cadastro Entregador', () => {
 
   let formData;
   beforeEach(() => {
-    formData = cy.fixture('formData').then((fd) => {
+    cy.fixture('formData').then((fd) => {
       formData = fd
    });
   });
