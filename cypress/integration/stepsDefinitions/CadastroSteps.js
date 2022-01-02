@@ -1,7 +1,7 @@
 import { Given as Dado, When as Quando, Then as Então } from "cypress-cucumber-preprocessor/steps"
 
-import signupPage from "../../support/pages/signup"
-import successModal from "../../support/pages/successModal"
+import signupPage from "../pageObjects/signup"
+import successModal from "../pageObjects/successModal"
 
 let formData
 beforeEach(() => {
