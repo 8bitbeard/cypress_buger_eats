@@ -11,13 +11,23 @@ describe('Cadastro Entregador', () => {
    });
   });
 
-  it('Deve ser possível retornar para a home', () => {
+  it('Deve ser possível retornar para a home', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_retorno_home'
+    ]
+  }, () => {
     signupPage.go();
     signupPage.returnHome();
     homePage.validateMessages();
   })
 
-  it('Deve ser possível cadastrar um entregador na modalidade Moto', () => {
+  it('Deve ser possível cadastrar um entregador na modalidade Moto', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_cadastro_moto'
+    ]
+  }, () => {
     homePage.go();
     homePage.accessForm();
     signupPage.fillForm(formData.valid_with_motocycle);
@@ -27,7 +37,12 @@ describe('Cadastro Entregador', () => {
     successModalPage.validateModalContent();
   })
 
-  it('Deve ser possível cadastrar um entregador na modalidade Van/Carro', () => {
+  it('Deve ser possível cadastrar um entregador na modalidade Van/Carro', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_cadastro_carro'
+    ]
+  }, () => {
     homePage.go();
     homePage.accessForm();
     signupPage.fillForm(formData.valid_with_car);
@@ -38,7 +53,12 @@ describe('Cadastro Entregador', () => {
   })
 
 
-  it('Deve ser possível cadastrar um entregador na modalidade Bicicleta sem enviar uma CNH', () => {
+  it('Deve ser possível cadastrar um entregador na modalidade Bicicleta sem enviar uma CNH', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_cadastro_bicicleta'
+    ]
+  }, () => {
     homePage.go();
     homePage.accessForm();
     signupPage.fillForm(formData.valid_with_bike);
@@ -47,7 +67,12 @@ describe('Cadastro Entregador', () => {
     successModalPage.validateModalContent();
   })
 
-  it('Deve ser exibida a mensagem inline de CPF incorreto', () => {
+  it('Deve ser exibida a mensagem inline de CPF incorreto', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_erro_cpf_invalido'
+    ]
+  }, () => {
     homePage.go();
     homePage.accessForm();
     signupPage.fillForm(formData.cpf_inv);
@@ -58,7 +83,12 @@ describe('Cadastro Entregador', () => {
     signupPage.alertMessagesShouldContain(expectedValues);
   })
 
-  it('Deve exibir mensagens inline quando os campos obrigatórios não forem preenchidos', () => {
+  it('Deve exibir mensagens inline quando os campos obrigatórios não forem preenchidos', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_erro_campos_obrigatórios'
+    ]
+  }, () => {
     homePage.go();
     homePage.accessForm();
     signupPage.submit();
@@ -76,7 +106,12 @@ describe('Cadastro Entregador', () => {
     signupPage.alertMessagesShouldContain(expectedValues);
   })
 
-  it('Não deve ser possível se cadastrar para mais de um método de entrega', () => {
+  it('Não deve ser possível se cadastrar para mais de um método de entrega', {
+    tags: [
+      '@#wilton_souza',
+      '@validar_erro_multiplos_metodos_entrega'
+    ]
+  }, () => {
     signupPage.go();
     signupPage.fillForm(formData.valid_multiple_delivery_methods);
     signupPage.uploadLicense(formData.valid_with_car.cnh);
@@ -85,5 +120,4 @@ describe('Cadastro Entregador', () => {
     const expectedValues = ['Oops! Selecione apenas um método de entrega'];
     signupPage.alertMessagesShouldContain(expectedValues);
   })
-
 })
