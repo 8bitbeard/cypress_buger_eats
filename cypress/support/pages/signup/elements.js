@@ -1,7 +1,7 @@
 export const ELEMENTS = {
   a_back_home: '#page-deliver header a',
   h1_form_title: '#page-deliver form h1',
-  inp_name: 'input[name="name"]',
+  inp_name: 'input[name="fullName"]',
   inp_cpf: 'input[name="cpf"]',
   inp_email: 'input[name="email"]',
   inp_whatsapp: 'input[name="whatsapp"]',

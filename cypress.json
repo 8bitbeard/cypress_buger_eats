@@ -1,6 +1,10 @@
 {
   "viewportWidth": 1440,
   "viewportHeight": 900,
-  "baseUrl": "https://buger-eats.vercel.app",
-  "testFiles": "**/*.feature"
+  "baseUrl": "https://buger-eats-qa.vercel.app",
+  "env": {
+    "grepFilterSpecs": true,
+    "grepOmitFiltered": true,
+    "grepTags": null
+  }
 }

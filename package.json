@@ -3,31 +3,13 @@
     "version": "1.0.0",
     "description": "Projeto de testes de aceitação da plataforma Buger Eats",
     "scripts": {
-        "clean:reports": "rm -rf cypress/reports",
-        "pretest": "yarn clean:reports",
-        "scripts": "cypress run --browser firefox",
-        "posttest": "node cucumber-html-report.js",
-        "test": "yarn scripts || yarn posttest"
+        "test": "cypress run --browser firefox"
     },
     "main": "index.js",
     "license": "MIT",
     "devDependencies": {
-        "cucumber-html-reporter": "^5.5.0",
         "cypress": "^9.2.0",
-        "cypress-cucumber-preprocessor": "^4.3.1",
         "cypress-file-upload": "^5.0.8",
         "cypress-grep": "^2.13.1"
-    },
-    "cypress-cucumber-preprocessor": {
-        "step_definitions": "cypress/integration/stepsDefinitions",
-        "cucumberJson": {
-            "generate": true,
-            "outputFolder": "cypress/reports/cucumber-json",
-            "filePrefix": "",
-            "fileSufix": ".cucumber"
-        }
-    },
-    "dependencies": {
-        "multiple-cucumber-html-reporter": "^1.18.3"
     }
 }

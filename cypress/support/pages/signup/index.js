@@ -29,8 +29,10 @@ class SignupPage {
 
     cy.get(elements.inp_district).should('have.value', deliveryMan.address.district)
     cy.get(elements.inp_city_uf).should('have.value', deliveryMan.address.city_state)
+  }
 
-    deliveryMan.delivery_method.forEach(deliveryMethod => {
+  selectDeliveryMethod(deliveryMethods) {
+    deliveryMethods.forEach(deliveryMethod => {
       cy.contains(elements.li_delivery_method, deliveryMethod).click()
     });
   }

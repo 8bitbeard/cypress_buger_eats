@@ -1,8 +1,9 @@
 import homePage from "../support/pages/home"
 import signupPage from '../support/pages/signup'
 import successModalPage from '../support/pages/successModal'
+import signupFactory from '../factories/SignupFactory'
 
-describe('Cadastro Entregador', () => {
+describe('Cadastro Entregador', { tags: '@validar_funcionalidade_cadastro' }, () => {
 
   let formData;
   beforeEach(() => {
@@ -28,10 +29,14 @@ describe('Cadastro Entregador', () => {
       '@validar_cadastro_moto'
     ]
   }, () => {
+
+    var deliverData = signupFactory.deliver();
+
     homePage.go();
     homePage.accessForm();
-    signupPage.fillForm(formData.valid_with_motocycle);
-    signupPage.uploadLicense(formData.valid_with_motocycle.cnh);
+    signupPage.fillForm(deliverData);
+    signupPage.selectDeliveryMethod(formData.motorcycle);
+    signupPage.uploadLicense(deliverData.cnh);
     signupPage.submit();
 
     successModalPage.validateModalContent();
@@ -43,25 +48,31 @@ describe('Cadastro Entregador', () => {
       '@validar_cadastro_carro'
     ]
   }, () => {
+    var deliverData = signupFactory.deliver();
+
     homePage.go();
     homePage.accessForm();
-    signupPage.fillForm(formData.valid_with_car);
-    signupPage.uploadLicense(formData.valid_with_car.cnh);
+    signupPage.fillForm(deliverData);
+    signupPage.selectDeliveryMethod(formData.car);
+    signupPage.uploadLicense(deliverData.cnh);
     signupPage.submit();
 
     successModalPage.validateModalContent();
   })
 
 
-  it('Deve ser possível cadastrar um entregador na modalidade Bicicleta sem enviar uma CNH', {
+  it('Deve ser possível cadastrar um entregador na modalidade Bike Elétrica sem enviar uma CNH', {
     tags: [
       '@#wilton_souza',
-      '@validar_cadastro_bicicleta'
+      '@validar_cadastro_bike_eletrica'
     ]
   }, () => {
+    var deliverData = signupFactory.deliver();
+
     homePage.go();
     homePage.accessForm();
-    signupPage.fillForm(formData.valid_with_bike);
+    signupPage.fillForm(deliverData);
+    signupPage.selectDeliveryMethod(formData.bike);
     signupPage.submit();
 
     successModalPage.validateModalContent();
@@ -73,10 +84,14 @@ describe('Cadastro Entregador', () => {
       '@validar_erro_cpf_invalido'
     ]
   }, () => {
+    var deliverData = signupFactory.deliver();
+    deliverData.cpf = '123456789aa'
+
     homePage.go();
     homePage.accessForm();
-    signupPage.fillForm(formData.cpf_inv);
-    signupPage.uploadLicense(formData.valid_with_car.cnh);
+    signupPage.fillForm(deliverData);
+    signupPage.selectDeliveryMethod(formData.motorcycle);
+    signupPage.uploadLicense(deliverData.cnh);
     signupPage.submit();
 
     const expectedValues = ['Oops! CPF inválido'];
@@ -112,9 +127,13 @@ describe('Cadastro Entregador', () => {
       '@validar_erro_multiplos_metodos_entrega'
     ]
   }, () => {
+
+    var deliverData = signupFactory.deliver();
+
     signupPage.go();
-    signupPage.fillForm(formData.valid_multiple_delivery_methods);
-    signupPage.uploadLicense(formData.valid_with_car.cnh);
+    signupPage.fillForm(deliverData);
+    signupPage.selectDeliveryMethod(formData.all);
+    signupPage.uploadLicense(deliverData.cnh);
     signupPage.submit();
 
     const expectedValues = ['Oops! Selecione apenas um método de entrega'];

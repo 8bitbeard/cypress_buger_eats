@@ -1,4 +1,18 @@
 {
+  "motorcycle": [
+    "Moto"
+  ],
+  "bike": [
+    "Bike Elétrica"
+  ],
+  "car": [
+    "Van/Carro"
+  ],
+  "all": [
+    "Moto",
+    "Bike Elétrica",
+    "Van/Carro"
+  ],
   "valid_with_motocycle": {
     "name": "Emilly Fabiana Aline Galvão",
     "cpf": "68469859307",
@@ -31,7 +45,7 @@
       "city_state": "Caxias/MA"
     },
     "delivery_method": [
-      "Bicicleta"
+      "Bike Elétrica"
     ]
   },
   "valid_with_car": {
@@ -67,7 +81,7 @@
     },
     "delivery_method": [
       "Moto",
-      "Bicicleta",
+      "Bike Elétrica",
       "Van/Carro"
     ],
     "cnh": "cnh-digital.jpg"
